@@ -1,0 +1,13 @@
+{
+    "builds": [
+      { "src": "docs/index.html", "use": "@vercel/static" }
+    ],
+    "routes": [
+      { "src": "/(.*).unityweb", "dest": "docs/$1.unityweb" },
+      { "src": "/(.*).js", "dest": "docs/$1.js" },
+      { "src": "/(.*).wasm", "headers": { "Content-Type": "application/wasm" }, "dest": "docs/$1.wasm" },
+      { "src": "/(.*).data", "dest": "docs/$1.data" },
+      { "src": "/(.*)", "dest": "docs/$1" }
+    ]
+  }
+  
